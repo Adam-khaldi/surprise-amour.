@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pour mon amour ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: linear-gradient(135deg, #ffe0eb, #fff5f8);
+    color: #a83260;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 8px 30px #d86b9533;
+}
+
+.heart {
+    font-size: 65px;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    to { transform: scale(1.15); }
+}
+
+h1 {
+    font-size: 32px;
+    color: #d6336c;
+}
+
+p {
+    line-height: 1.8;
+}
+
+input {
+    padding: 12px;
+    width: 180px;
+    border: 2px solid pink;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 20px;
+    margin: 10px;
+}
+
+button {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 25px;
+    background: #e75480;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 8px;
+}
+
+button:hover {
+    background: #c72f61;
+}
+
+.hidden {
+    display: none;
+}
+
+.flowers {
+    font-size: 45px;
+    margin: 25px 0;
+}
+
+.letter {
+    background: #fff0f5;
+    padding: 20px;
+    border-radius: 15px;
+    line-height: 2;
+    white-space: pre-line;
+}
+
+#error {
+    color: red;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="login">
+    <div class="heart">💗</div>
+
+    <h1>Pour mon amour</h1>
+
+    <p>
+        J'ai préparé une petite surprise pour toi,
+        ma princesse. Entre notre code secret ❤️
+    </p>
+
+    <input
+        type="password"
+        id="code"
+        placeholder="Code secret"
+    >
+
+    <br>
+
+    <button onclick="openGift()">
+        Découvrir ma surprise 💌
+    </button>
+
+    <p id="error"></p>
+</div>
+
+<div class="container hidden" id="surprise">
+
+    <div class="heart">❤️</div>
+
+    <h1>Bienvenue mon amour !</h1>
+
+    <p>
+        Cette surprise est petite,
+        mais l'amour derrière elle est immense. 🫀
+    </p>
+
+    <button onclick="showFlowers()">
+        🌹 Bouquet de fleurs
+    </button>
+
+    <button onclick="showLetter()">
+        💌 Lire ma lettre
+    </button>
+
+    <div id="flowers" class="hidden">
+        <div class="flowers">
+            🌹🌷🌹<br>
+            💐❤️💐<br>
+            🌷🌹🌷
+        </div>
+
+        <h2>Pour la plus belle des princesses 👸🏼</h2>
+
+        <p>
+            Si les fleurs pouvaient parler,
+            elles te diraient combien tu es spéciale.
+            Chaque pétale représente un petit morceau
+            de l'amour que j'ai pour toi. ❤️
+        </p>
+    </div>
+
+    <div id="letter" class="letter hidden">
+        <h2>Mon amour ❤️</h2>
+
+        Tu me manques plus que les mots
+        ne peuvent l'expliquer.
+
+        Si je pouvais choisir un endroit
+        où être maintenant, je choisirais
+        celui où je pourrais te voir sourire.
+
+        Tu es une pensée douce dans mes journées,
+        une lumière dans mes moments difficiles,
+        et une personne précieuse dans ma vie.
+
+        Je veux continuer à te faire sourire,
+        à prendre soin de notre relation,
+        et à te montrer combien tu comptes pour moi.
+
+        Je t'aime, ma princesse. ❤️🫀💋
+    </div>
+
+</div>
+
+<script>
+const SECRET_CODE = "2922";
+
+function openGift() {
+    const code = document.getElementById("code").value;
+    const error = document.getElementById("error");
+
+    if (code === SECRET_CODE) {
+        document.getElementById("login").classList.add("hidden");
+        document.getElementById("surprise").classList.remove("hidden");
+    } else {
+        error.textContent = "Code incorrect, mon amour 💗";
+    }
+}
+
+function showFlowers() {
+    document.getElementById("flowers").classList.remove("hidden");
+    document.getElementById("letter").classList.add("hidden");
+}
+
+function showLetter() {
+    document.getElementById("letter").classList.remove("hidden");
+    document.getElementById("flowers").classList.add("hidden");
+}
+</script>
+
+</body>
+</html>
